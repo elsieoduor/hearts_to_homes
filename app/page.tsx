@@ -92,7 +92,7 @@ export default function HomePage() {
               className="w-full aspect-video overflow-hidden rounded-xl bg-muted"
             >
               <img
-                src="/happy-children-playing-in-a-safe-home-environment.jpg"
+                src="/image.png"
                 alt="Children at Hearts to Homes"
                 className="w-full h-full object-cover rounded-xl"
               />
