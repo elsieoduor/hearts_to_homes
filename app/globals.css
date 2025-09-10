@@ -37,7 +37,10 @@
   --sidebar-accent-foreground: oklch(1 0 0); /* White sidebar accent text */
   --sidebar-border: oklch(0.9 0.01 85); /* Light sidebar border */
   --sidebar-ring: oklch(0.65 0.15 65); /* Amber sidebar focus ring */
+  --font-spacegrotesk: 'Space Grotesk', sans-serif;
+  --font-inter:'Inter', sans-serif;
 }
+
 
 .dark {
   --background: oklch(0.145 0 0);
@@ -75,8 +78,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-spacegrotesk);
+  --font-mono: var(--font-inter);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
