@@ -81,8 +81,8 @@ export default function ContactPage() {
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-balance">Get in Touch</h1>
             <p className="text-muted-foreground md:text-xl text-pretty">
-              We'd love to hear from you. Whether you have questions about our programs, want to volunteer, or need
-              support, we're here to help. Reach out to us anytime.
+              We&quot;d love to hear from you. Whether you have questions about our programs, want to volunteer, or need
+              support, we&quot;re here to help. Reach out to us anytime.
             </p>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
                 <CardDescription>
-                  Fill out the form below and we'll get back to you as soon as possible.
+                  Fill out the form below and we&quot;ll get back to you as soon as possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -267,7 +267,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle className="text-red-800">Emergency Contact</CardTitle>
               <CardDescription className="text-red-700">
-                If you have an urgent matter or emergency involving a child's safety, please contact us immediately.
+                If you have an urgent matter or emergency involving a child&quot;s safety, please contact us immediately.
               </CardDescription>
             </CardHeader>
             <CardContent>

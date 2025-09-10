@@ -239,7 +239,7 @@ export default function AboutPage() {
                     <CardDescription>{s.desc}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground mb-4 dark:text-gray-300">"{s.story}"</p>
+                    <p className="text-sm text-muted-foreground mb-4 dark:text-gray-300">&quot;{s.story}&quot;</p>
                     <p className="text-xs font-medium text-muted-foreground dark:text-gray-400">- {s.name}, {s.age}</p>
                   </CardContent>
                 </Card>

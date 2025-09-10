@@ -120,7 +120,7 @@ export default function CheckoutPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold tracking-tighter mb-2">Complete Your Donation</h1>
-            <p className="text-muted-foreground">Your generosity makes a real difference in children's lives</p>
+            <p className="text-muted-foreground">Your generosity makes a real difference in children&quot;s lives</p>
           </div>
 
           <div className="grid gap-8 lg:grid-cols-3">
@@ -202,7 +202,7 @@ export default function CheckoutPage() {
                 <Card>
                   <CardHeader>
                     <CardTitle>Payment Method</CardTitle>
-                    <CardDescription>Choose how you'd like to make your donation</CardDescription>
+                    <CardDescription>Choose how you&quot;d like to make your donation</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
@@ -373,7 +373,7 @@ export default function CheckoutPage() {
                   <div className="bg-green-50 p-3 rounded-lg border border-green-200">
                     <p className="text-sm font-medium text-green-800">Tax Deductible</p>
                     <p className="text-xs text-green-700">
-                      Your donation is tax-deductible. You'll receive a receipt via email.
+                      Your donation is tax-deductible. You&quot;ll receive a receipt via email.
                     </p>
                   </div>
 
