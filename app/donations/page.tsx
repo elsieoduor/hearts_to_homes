@@ -185,7 +185,7 @@ export default function DonationsPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 md:py-24">
+      <section className="py-12 md:py-24 bg-white">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-balance">
@@ -200,7 +200,7 @@ export default function DonationsPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-6 border-b">
+      <section className="py-6  bg-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-wrap gap-2 justify-center">
             {categories.map((category) => (

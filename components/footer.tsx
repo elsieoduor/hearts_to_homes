@@ -61,13 +61,13 @@ const footer = () => {
               <div className="space-y-1 text-sm text-muted-foreground">
                 <p>123 Hope Street</p>
                 <p>Community City, CC 12345</p>
-                <p>Phone: (555) 123-4567</p>
+                <p>Phone: +254 728969182</p>
                 <p>Email: info@heartstohomes.org</p>
               </div>
             </div>
           </div>
           <div className="mt-8 border-t pt-4 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Hearts to Homes. All rights reserved.</p>
+            <p>&copy; 2025 Hearts to Homes. All rights reserved.</p>
           </div>
         </div>
       </footer>

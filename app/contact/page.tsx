@@ -44,7 +44,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -119,9 +119,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold">Phone</h3>
                       <p className="text-muted-foreground">
-                        Main: (555) 123-4567
+                        Main: +254 728969182
                         <br />
-                        Emergency: (555) 123-4568
+                        Emergency: +254 728969182
                       </p>
                     </div>
                   </div>
@@ -223,7 +223,7 @@ export default function ContactPage() {
                       type="tel"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="(555) 123-4567"
+                      placeholder="+254 728969182"
                     />
                   </div>
                   <div className="space-y-2">
@@ -274,7 +274,7 @@ export default function ContactPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="destructive" size="lg">
                   <Phone className="h-4 w-4 mr-2" />
-                  Call Emergency Line: (555) 123-4568
+                  Call Emergency Line: +254 728969182
                 </Button>
                 <Button variant="outline" size="lg">
                   <Mail className="h-4 w-4 mr-2" />

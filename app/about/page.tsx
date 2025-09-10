@@ -68,7 +68,7 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
         className="py-12 md:py-24"
       >
-        <div className="container px-4 md:px-6">
+        <div className="container px-4 md:px-6 ">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Our Story of Hope and Love
