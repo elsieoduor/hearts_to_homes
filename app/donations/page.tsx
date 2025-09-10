@@ -25,7 +25,7 @@ const donationItems: DonationItem[] = [
     category: "Food & Nutrition",
     urgency: "high",
     cost: 50,
-    image: "/children-eating-healthy-meals-together.jpg",
+    image: "/needs.png",
   },
   {
     id: "2",
@@ -34,7 +34,7 @@ const donationItems: DonationItem[] = [
     category: "Education",
     urgency: "medium",
     cost: 25,
-    image: "/children-studying-and-learning-in-classroom.jpg",
+    image: "/school-supply.png",
   },
   {
     id: "3",
@@ -43,7 +43,7 @@ const donationItems: DonationItem[] = [
     category: "Clothing",
     urgency: "high",
     cost: 75,
-    image: "/placeholder-yvwdk.png",
+    image: "/clothes.png",
   },
   {
     id: "4",
@@ -52,7 +52,7 @@ const donationItems: DonationItem[] = [
     category: "Healthcare",
     urgency: "high",
     cost: 100,
-    image: "/healthcare-for-children-medical-checkup.jpg",
+    image: "/healthcare.png",
   },
   {
     id: "5",
@@ -61,7 +61,7 @@ const donationItems: DonationItem[] = [
     category: "Education",
     urgency: "low",
     cost: 30,
-    image: "/placeholder-ycafb.png",
+    image: "/education.png",
   },
   {
     id: "6",
@@ -70,7 +70,7 @@ const donationItems: DonationItem[] = [
     category: "Housing",
     urgency: "medium",
     cost: 40,
-    image: "/placeholder-4zhyr.png",
+    image: "/beddings.png",
   },
   {
     id: "7",
@@ -79,7 +79,7 @@ const donationItems: DonationItem[] = [
     category: "Recreation",
     urgency: "low",
     cost: 35,
-    image: "/placeholder-ccz4l.png",
+    image: "/sports.png",
   },
   {
     id: "8",
@@ -88,7 +88,7 @@ const donationItems: DonationItem[] = [
     category: "Healthcare",
     urgency: "medium",
     cost: 80,
-    image: "/placeholder-i1zak.png",
+    image: "/therapy.png",
   },
 ]
 
