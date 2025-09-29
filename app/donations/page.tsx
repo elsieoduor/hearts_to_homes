@@ -146,9 +146,9 @@ export default function DonationsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full flex flex-col items-center justify-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
             <Heart className="h-8 w-8 text-primary" />
@@ -185,7 +185,7 @@ export default function DonationsPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 md:py-24 bg-white">
+      <section className="py-12 md:py-24 ">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-balance">
@@ -200,7 +200,7 @@ export default function DonationsPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-6  bg-white">
+      <section className="py-6 w-full border-y">
         <div className="container px-4 md:px-6">
           <div className="flex flex-wrap gap-2 justify-center">
             {categories.map((category) => (
