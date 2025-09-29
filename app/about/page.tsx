@@ -11,9 +11,9 @@ export default function AboutPage() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-background text-foreground dark:bg-gray-900 dark:text-white transition-colors">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground dark:bg-gray-900 dark:text-white transition-colors">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:bg-gray-800/80">
+      <header className="sticky top-0 z-50 w-full flex flex-col items-center justify-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:bg-gray-800/80">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
             <Heart className="h-8 w-8 text-primary" />
@@ -60,6 +60,7 @@ export default function AboutPage() {
           </motion.div>
         )}
       </header>
+
 
       {/* Hero Section */}
       <motion.section
