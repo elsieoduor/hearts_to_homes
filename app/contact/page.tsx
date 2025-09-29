@@ -8,8 +8,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Heart, MapPin, Phone, Mail, Clock, Send } from "lucide-react"
+import { Heart, MapPin, Phone, Mail, Clock, Send, Menu, Home, Briefcase, Grid3X3 } from "lucide-react"
 import Link from "next/link"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -43,7 +45,9 @@ export default function ContactPage() {
     alert("Thank you for your message! We'll get back to you soon.")
   }
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   return (
+
     <div className="min-h-screen flex flex-col items-center justify-center">
       {/* Header */}
       <header className="sticky top-0 z-50 w-full  flex flex-col items-center justify-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -108,7 +112,7 @@ export default function ContactPage() {
                         <br />
                         Community City, CC 12345
                         <br />
-                        United States
+                        Kenya
                       </p>
                     </div>
                   </div>
@@ -306,7 +310,62 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      {/* Mobile Menu Button */}
+        <div className="fixed bottom-4 left-4 z-50 md:hidden">
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger asChild>
+              <Button size="icon" className="h-12 w-12 rounded-full bg-black text-white shadow-lg">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="p-0 w-[80%]">
+              <MobileSidebar />
+            </SheetContent>
+          </Sheet>
+        </div>
 
+    </div>
+  )
+}
+
+function MobileSidebar() {
+  return (
+    <div className="h-full bg-white">
+      <div className="flex h-16 items-center border-b px-4">
+        <div className="flex items-center gap-2">
+          <div className="relative h-8 w-8">
+            <Heart className="h-6 w-6 text-primary" />
+          </div>
+          <span className="font-bold">Hearts to Homes</span>
+        </div>
+      </div>
+
+      <div className="p-4">
+        <nav className="space-y-2">
+          <Link href="/" className="flex items-center gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100">
+            <Heart className="h-6 w-6 text-primary" />
+            <span>Home</span>
+          </Link>
+          <Link
+            href="/donations"
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"
+          >
+            <Briefcase className="h-5 w-5" />
+            <span>Donations</span>
+          </Link>
+          <Link href="/about" className="flex items-center gap-3 bg-[#568203]/10 rounded-md px-3 py-2 text-[#568203]  hover:bg-gray-100">
+            <Grid3X3 className="h-5 w-5" />
+            <span>About</span>
+          </Link>
+          <Link
+            href="/contact"
+            className="flex items-center gap-3 rounded-md  px-3 py-2 text-gray-700 font-medium"
+          >
+            <Mail className="h-5 w-5" />
+            <span>Contact</span>
+          </Link>
+        </nav>
+      </div>
     </div>
   )
 }
