@@ -4,8 +4,10 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Heart, Users, Home, Award, Target, Eye, Menu, X } from "lucide-react"
+import { Heart, Users, Home, Award, Target, Eye, Menu, X, Briefcase, Grid3X3, Mail } from "lucide-react"
 import Link from "next/link"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import Image from "next/image"
 
 export default function AboutPage() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -152,7 +154,7 @@ export default function AboutPage() {
               className="mx-auto aspect-video overflow-hidden rounded-xl bg-muted"
             >
               <img
-                src="/founders-with-children-at-hearts-to-homes.jpg"
+                src="/image.png"
                 alt="Founders with children"
                 className="w-full h-full object-cover rounded-xl"
               />
@@ -251,7 +253,7 @@ export default function AboutPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-12 md:py-24 bg-primary text-primary-foreground dark:bg-primary dark:text-white">
+      <section className="py-12 w-full flex flex-col items-center justify-center md:py-24 bg-primary text-primary-foreground dark:bg-primary dark:text-white">
         <div className="container px-4 md:px-6">
           <div className="text-center space-y-6 max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold sm:text-4xl">Join Our Mission</h2>
@@ -274,6 +276,10 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      
     </div>
   )
 }
+
+
