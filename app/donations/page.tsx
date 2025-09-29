@@ -4,8 +4,9 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Heart, ShoppingCart, Plus, Minus, X } from "lucide-react"
+import { Heart, ShoppingCart, Plus, Minus, X, Menu, Briefcase, Grid3X3, Mail } from "lucide-react"
 import Link from "next/link"
+import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
 
 interface DonationItem {
   id: string
@@ -24,7 +25,7 @@ const donationItems: DonationItem[] = [
     description: "Provide healthy, balanced meals for children for one week",
     category: "Food & Nutrition",
     urgency: "high",
-    cost: 50,
+    cost: 500,
     image: "/needs.png",
   },
   {
@@ -33,16 +34,16 @@ const donationItems: DonationItem[] = [
     description: "Complete set of notebooks, pencils, and educational materials",
     category: "Education",
     urgency: "medium",
-    cost: 25,
+    cost: 1000,
     image: "/school-supply.png",
   },
   {
     id: "3",
-    name: "Winter Clothing Set",
+    name: "Clothing Set",
     description: "Warm clothes including jacket, shoes, and accessories",
     category: "Clothing",
     urgency: "high",
-    cost: 75,
+    cost: 1500,
     image: "/clothes.png",
   },
   {
@@ -51,16 +52,16 @@ const donationItems: DonationItem[] = [
     description: "Comprehensive health examination and basic medical care",
     category: "Healthcare",
     urgency: "high",
-    cost: 100,
+    cost: 1000,
     image: "/healthcare.png",
   },
   {
     id: "5",
-    name: "Educational Toys",
+    name: "Educational Items",
     description: "Learning games and toys that promote cognitive development",
     category: "Education",
     urgency: "low",
-    cost: 30,
+    cost: 3000,
     image: "/education.png",
   },
   {
@@ -69,7 +70,7 @@ const donationItems: DonationItem[] = [
     description: "Comfortable bed sheets, pillows, and blankets",
     category: "Housing",
     urgency: "medium",
-    cost: 40,
+    cost: 400,
     image: "/beddings.png",
   },
   {
@@ -78,7 +79,7 @@ const donationItems: DonationItem[] = [
     description: "Balls, equipment for outdoor activities and physical development",
     category: "Recreation",
     urgency: "low",
-    cost: 35,
+    cost: 3500,
     image: "/sports.png",
   },
   {
@@ -87,7 +88,7 @@ const donationItems: DonationItem[] = [
     description: "Professional counseling session to support emotional healing",
     category: "Healthcare",
     urgency: "medium",
-    cost: 80,
+    cost: 800,
     image: "/therapy.png",
   },
 ]
@@ -96,6 +97,7 @@ const categories = ["All", "Food & Nutrition", "Education", "Clothing", "Healthc
 
 export default function DonationsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [cart, setCart] = useState<{ [key: string]: number }>({})
   const [showCart, setShowCart] = useState(false)
 
@@ -200,7 +202,7 @@ export default function DonationsPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-6 w-full border-y">
+      <section className="py-6 w-full border-y flex flex-col items-center justify-center">
         <div className="container px-4 md:px-6">
           <div className="flex flex-wrap gap-2 justify-center">
             {categories.map((category) => (
@@ -239,7 +241,7 @@ export default function DonationsPage() {
                 <CardContent className="pt-0">
                   <div className="flex items-center justify-between">
                     <div className="space-y-1">
-                      <p className="text-2xl font-bold text-primary">${item.cost}</p>
+                      <p className="text-2xl font-bold text-primary">Ksh.{item.cost}</p>
                       <p className="text-xs text-muted-foreground">{item.category}</p>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -298,7 +300,7 @@ export default function DonationsPage() {
                         />
                         <div className="flex-1 min-w-0">
                           <p className="font-medium text-sm truncate">{item.name}</p>
-                          <p className="text-xs text-muted-foreground">${item.cost} each</p>
+                          <p className="text-xs text-muted-foreground">Ksh.{item.cost} each</p>
                         </div>
                         <div className="flex items-center space-x-1">
                           <Button size="sm" variant="outline" onClick={() => removeFromCart(itemId)}>
@@ -319,7 +321,7 @@ export default function DonationsPage() {
               <div className="border-t p-4 space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="font-semibold">Total:</span>
-                  <span className="text-2xl font-bold text-primary">${getCartTotal()}</span>
+                  <span className="text-2xl font-bold text-primary">Ksh.{getCartTotal()}</span>
                 </div>
                 <Button className="w-full" size="lg" asChild>
                   <Link href="/checkout">Proceed to Donation</Link>
@@ -362,6 +364,62 @@ export default function DonationsPage() {
         </div>
       </section>
 
+      {/* Mobile Menu Button */}
+        <div className="fixed bottom-4 left-4 z-50 md:hidden">
+          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+            <SheetTrigger asChild>
+              <Button size="icon" className="h-12 w-12 rounded-full bg-black text-white shadow-lg">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="p-0 w-[80%]">
+              <MobileSidebar />
+            </SheetContent>
+          </Sheet>
+        </div>
+
+    </div>
+  )
+}
+
+function MobileSidebar() {
+  return (
+    <div className="h-full bg-white">
+      <div className="flex h-16 items-center border-b px-4">
+        <div className="flex items-center gap-2">
+          <div className="relative h-8 w-8">
+            <Heart className="h-6 w-6 text-primary" />
+          </div>
+          <span className="font-bold">Hearts to Homes</span>
+        </div>
+      </div>
+
+      <div className="p-4">
+        <nav className="space-y-2">
+          <Link href="/" className="flex items-center gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100">
+            <Heart className="h-6 w-6 text-primary" />
+            <span>Home</span>
+          </Link>
+          <Link
+            href="/donations"
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"
+          >
+            <Briefcase className="h-5 w-5" />
+            <span>Donations</span>
+          </Link>
+          <Link href="/about" className="flex items-center gap-3 bg-[#568203]/10 rounded-md px-3 py-2 text-[#568203]  hover:bg-gray-100">
+            <Grid3X3 className="h-5 w-5" />
+            <span>About</span>
+          </Link>
+          <Link
+            href="/contact"
+            className="flex items-center gap-3 rounded-md  px-3 py-2 text-gray-700 font-medium"
+          >
+            <Mail className="h-5 w-5" />
+            <span>Contact</span>
+          </Link>
+        </nav>
+      </div>
     </div>
   )
 }
