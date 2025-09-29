@@ -34,12 +34,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>       
-         <Suspense fallback={null}>
-          {children}
-          <Footer />
-         </Suspense>
-        <Analytics />
-
+         {/* <div className="flex flex-col items-center justify-center min-h-screen"> */}
+          <Suspense fallback={null}>
+            {children}
+            <Footer />
+          </Suspense>
+          <Analytics />
+         {/* </div> */}
       </body>
     </html>
   )
