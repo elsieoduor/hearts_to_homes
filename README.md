@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Hearts to Homes 🏡💖
+"Hearts to Homes" is a web application designed to facilitate donations for children's homes. The project's main objective is to provide a clean, accessible, and trustworthy platform where individuals can learn about and contribute to children's homes in need.
 
-## Getting Started
+Features
 
-First, run the development server:
+Responsive Design: The website is fully responsive, ensuring a seamless experience on both desktop and mobile devices.
 
-```bash
+Intuitive UI: A clean and simple user interface makes it easy for visitors to navigate the site and find information quickly.
+
+Project Showcase: The platform effectively communicates the mission and needs of children's homes through clear and concise content.
+
+Donation System (In Progress): The donation system is currently being developed and will feature secure payment gateways.
+
+Technologies Used
+
+Frontend:
+
+Next.js: A React framework for building fast and modern web applications.
+
+Tailwind CSS: A utility-first CSS framework for rapid UI development.
+
+TypeScript: Used to ensure code quality and maintainability.
+
+Payment Integration (Coming Soon):
+
+M-Pesa: For mobile money payments.
+
+Stripe: For credit/debit card payments.
+
+Installation and Setup
+
+Clone the repository:
+
+Bash
+
+git clone [[Your-GitHub-Repo-URL](https://github.com/elsieoduor/hearts_to_homes)]
+cd hearts-to-homes
+Install dependencies:
+
+Bash
+
+npm install
+Run the development server:
+
+Bash
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 in your browser to view the project.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project Status
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The core frontend is complete, with a focus on delivering a great user experience. I am now in the process of implementing the M-Pesa and Stripe payment APIs to enable live donations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Acknowledgments
 
-## Learn More
+Thanks to the community for their support and feedback.
 
-To learn more about Next.js, take a look at the following resources:
+Special thanks to the children's homes who inspired this project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the [Your License Type] License
