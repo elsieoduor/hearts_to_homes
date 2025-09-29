@@ -241,7 +241,7 @@ export default function DonationsPage() {
                 <CardContent className="pt-0">
                   <div className="flex items-center justify-between">
                     <div className="space-y-1">
-                      <p className="text-2xl font-bold text-primary">Ksh.{item.cost}</p>
+                      <p className="text-2xl font-bold text-primary">Ksh. {item.cost}</p>
                       <p className="text-xs text-muted-foreground">{item.category}</p>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -300,7 +300,7 @@ export default function DonationsPage() {
                         />
                         <div className="flex-1 min-w-0">
                           <p className="font-medium text-sm truncate">{item.name}</p>
-                          <p className="text-xs text-muted-foreground">Ksh.{item.cost} each</p>
+                          <p className="text-xs text-muted-foreground">Ksh. {item.cost} each</p>
                         </div>
                         <div className="flex items-center space-x-1">
                           <Button size="sm" variant="outline" onClick={() => removeFromCart(itemId)}>
@@ -321,7 +321,7 @@ export default function DonationsPage() {
               <div className="border-t p-4 space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="font-semibold">Total:</span>
-                  <span className="text-2xl font-bold text-primary">Ksh.{getCartTotal()}</span>
+                  <span className="text-2xl font-bold text-primary">Ksh. {getCartTotal()}</span>
                 </div>
                 <Button className="w-full" size="lg" asChild>
                   <Link href="/checkout">Proceed to Donation</Link>
