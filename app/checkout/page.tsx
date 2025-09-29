@@ -10,8 +10,9 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Separator } from "@/components/ui/separator"
-import { Heart, CreditCard, Shield, Lock } from "lucide-react"
+import { Heart, CreditCard, Shield, Lock, Landmark, Smartphone, Menu, Briefcase, Grid3X3, Mail } from "lucide-react"
 import Link from "next/link"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 interface DonationItem {
   id: string
@@ -22,9 +23,9 @@ interface DonationItem {
 
 // Mock data - in a real app, this would come from the cart state
 const mockCartItems: DonationItem[] = [
-  { id: "1", name: "Nutritious Meals", cost: 50, quantity: 2 },
-  { id: "2", name: "School Supplies Kit", cost: 25, quantity: 1 },
-  { id: "4", name: "Medical Check-up", cost: 100, quantity: 1 },
+  { id: "1", name: "Nutritious Meals", cost: 500, quantity: 2 },
+  { id: "2", name: "School Supplies Kit", cost: 1000, quantity: 1 },
+  { id: "4", name: "Medical Check-up", cost: 1000, quantity: 1 },
 ]
 
 export default function CheckoutPage() {
@@ -81,11 +82,12 @@ export default function CheckoutPage() {
       // In a real app, redirect to success page
     }, 3000)
   }
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col items-center justify-center">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full flex flex-col items-center justify-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center space-x-2">
             <Heart className="h-8 w-8 text-primary" />
@@ -215,11 +217,17 @@ export default function CheckoutPage() {
                       </div>
                       <div className="flex items-center space-x-2">
                         <RadioGroupItem value="paypal" id="paypal" />
-                        <Label htmlFor="paypal">PayPal</Label>
+                        <Label htmlFor="paypal" className="flex items-center space-x-2">
+                          <Smartphone className="h-4 w-4" />
+                          <span>PayPal</span>
+                          </Label>
                       </div>
                       <div className="flex items-center space-x-2">
                         <RadioGroupItem value="bank-transfer" id="bank-transfer" />
-                        <Label htmlFor="bank-transfer">Bank Transfer</Label>
+                        <Label htmlFor="bank-transfer" className="flex items-center space-x-2">
+                          <Landmark className="h-4 w-4" />
+                           <span>Bank Transfer</span>
+                          </Label>
                       </div>
                     </RadioGroup>
 
@@ -318,7 +326,7 @@ export default function CheckoutPage() {
                   ) : (
                     <>
                       <Lock className="h-4 w-4 mr-2" />
-                      Complete Donation - ${total.toFixed(2)}
+                      Complete Donation - Ksh. {total.toFixed(2)}
                     </>
                   )}
                 </Button>
@@ -338,7 +346,7 @@ export default function CheckoutPage() {
                         <p className="font-medium text-sm">{item.name}</p>
                         <p className="text-xs text-muted-foreground">Qty: {item.quantity}</p>
                       </div>
-                      <p className="font-medium">${(item.cost * item.quantity).toFixed(2)}</p>
+                      <p className="font-medium">Ksh. {(item.cost * item.quantity).toFixed(2)}</p>
                     </div>
                   ))}
 
@@ -346,19 +354,19 @@ export default function CheckoutPage() {
 
                   <div className="flex justify-between">
                     <span>Subtotal</span>
-                    <span>${subtotal.toFixed(2)}</span>
+                    <span>Ksh. {subtotal.toFixed(2)}</span>
                   </div>
 
                   <div className="flex justify-between text-sm text-muted-foreground">
                     <span>Processing Fee</span>
-                    <span>${processingFee.toFixed(2)}</span>
+                    <span>Ksh. {processingFee.toFixed(2)}</span>
                   </div>
 
                   <Separator />
 
                   <div className="flex justify-between font-bold text-lg">
                     <span>Total</span>
-                    <span className="text-primary">${total.toFixed(2)}</span>
+                    <span className="text-primary">Ksh. {total.toFixed(2)}</span>
                   </div>
 
                   {isRecurring && (
@@ -386,10 +394,66 @@ export default function CheckoutPage() {
                 </CardContent>
               </Card>
             </div>
+
+            {/* Mobile Menu Button */}
+            <div className="fixed bottom-4 left-4 z-50 md:hidden">
+              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button size="icon" className="h-12 w-12 rounded-full bg-black text-white shadow-lg">
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="p-0 w-[80%]">
+                  <MobileSidebar />
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>
 
+    </div>
+  )
+}
+
+function MobileSidebar() {
+  return (
+    <div className="h-full bg-white">
+      <div className="flex h-16 items-center border-b px-4">
+        <div className="flex items-center gap-2">
+          <div className="relative h-8 w-8">
+            <Heart className="h-6 w-6 text-primary" />
+          </div>
+          <span className="font-bold">Hearts to Homes</span>
+        </div>
+      </div>
+
+      <div className="p-4">
+        <nav className="space-y-2">
+          <Link href="/" className="flex items-center gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100">
+            <Heart className="h-6 w-6 text-primary" />
+            <span>Home</span>
+          </Link>
+          <Link
+            href="/donations"
+            className="flex items-center gap-3 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"
+          >
+            <Briefcase className="h-5 w-5" />
+            <span>Donations</span>
+          </Link>
+          <Link href="/about" className="flex items-center gap-3 bg-[#568203]/10 rounded-md px-3 py-2 text-[#568203]  hover:bg-gray-100">
+            <Grid3X3 className="h-5 w-5" />
+            <span>About</span>
+          </Link>
+          <Link
+            href="/contact"
+            className="flex items-center gap-3 rounded-md  px-3 py-2 text-gray-700 font-medium"
+          >
+            <Mail className="h-5 w-5" />
+            <span>Contact</span>
+          </Link>
+        </nav>
+      </div>
     </div>
   )
 }
